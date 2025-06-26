@@ -1,0 +1,19 @@
+.button:hover {
+    -fx-cursor: hand;
+}
+.toggle-button:hover {
+    -fx-cursor: hand;
+}
+#imgviewinteract:hover {
+    -fx-cursor: hand;
+}
+.date-picker:hover {
+    -fx-cursor: hand;
+}
+
+.color-picker:hover {
+    -fx-cursor: hand;
+}
+.slider:hover {
+    -fx-cursor: hand;
+}

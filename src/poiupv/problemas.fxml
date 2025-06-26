@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="hBoxPadre" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1224.0" style="-fx-background-color: #0B1320;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ProblemasController">
+   <children>
+      <AnchorPane minWidth="-Infinity" prefHeight="768.0" prefWidth="1201.0" style="-fx-background-color: #0B1320;">
+      
+        <children>
+      
+          <!-- BARRA DE BÚSQUEDA -->
+          <HBox spacing="5" style="-fx-background-color: #1D2939; -fx-background-radius: 10px;" AnchorPane.leftAnchor="22" AnchorPane.rightAnchor="22" AnchorPane.topAnchor="31">
+            <padding>
+              <Insets bottom="5" left="5" right="5" top="5" />
+            </padding>
+            <children>
+              <TextField fx:id="barraBusqueda" prefHeight="30.0" prefWidth="617.0" promptText="Buscar..." style="                      -fx-background-color: #1D2939;                      -fx-background-radius: 10px;                      -fx-text-fill: white;                      -fx-cursor: text;                    " HBox.hgrow="ALWAYS" />
+              <Button fx:id="btnBuscar" onAction="#buscar" prefWidth="40" style="                   -fx-background-color: #1D2939;                   -fx-background-radius: 10px;                   -fx-text-fill: white;                 ">
+                <graphic>
+                  <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                    <image>
+                      <Image url="@../resources/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+              </Button>
+            </children>
+          </HBox>
+      
+          <!-- ZONA PRINCIPAL: IMAGEN + LISTVIEW -->
+          <HBox fx:id="hBoxLista" fillHeight="true" layoutX="7.0" prefHeight="400.0" prefWidth="713.0" spacing="10" AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="22" AnchorPane.topAnchor="90">
+            <children>
+              <!-- Zona de imagen (hidratada desde el Controller) -->
+              <HBox fx:id="imageContainer" prefHeight="400.0" prefWidth="16.0" />
+      
+              <!-- Zona de lista: ocupa todo el espacio restante -->
+              <AnchorPane prefHeight="400.0" prefWidth="708.0" HBox.hgrow="ALWAYS">
+                <children>
+                  <ListView fx:id="listaView" layoutX="-28.0" prefHeight="400.0" prefWidth="724.0" style="                         -fx-control-inner-background: #1D2939;                         -fx-text-fill: white;                       " styleClass="listview" stylesheets="@estiloListas.css" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" />
+                </children>
+              </AnchorPane>
+            </children>
+          </HBox>
+      
+          <!-- BOTÓN INICIO ABAJO IZQ -->
+          <HBox AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="22">
+            <children>
+              <Button fx:id="btnInicio" onAction="#inicio" prefHeight="40" prefWidth="128" style="                   -fx-background-color: #1D2939;                   -fx-background-radius: 10px;                   -fx-text-fill: white;                 " stylesheets="@boton.css">
+                <graphic>
+                  <ImageView fitHeight="14" fitWidth="21" preserveRatio="true">
+                    <image>
+                      <Image url="@../resources/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+                <text>Inicio</text>
+                     <styleClass>
+                        <String fx:value="button" />
+                        <String fx:value="button" />
+                        <String fx:value="button" />
+                        <String fx:value="button" />
+                        <String fx:value="button" />
+                        <String fx:value="button" />
+                     </styleClass>
+              </Button>
+            </children>
+          </HBox>
+      
+          <!-- BOTÓN PROBLEMA ALEATORIO ABAJO DCHA -->
+          <Button fx:id="botonAleatorio" onAction="#aleatorio" prefHeight="40" prefWidth="122" style="               -fx-background-color: #1D2939;               -fx-background-radius: 10px;               -fx-text-fill: white;             " stylesheets="@boton.css" text="Problema aleatorio" AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="22" />
+      
+        </children>
+      </AnchorPane>
+   </children>
+</HBox>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1145.0" style="-fx-background-color: #0B1320;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.CartaController">
+   <HBox fx:id="hBoxEnunciado" alignment="CENTER_LEFT" layoutX="24.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="22.666666666666515" AnchorPane.topAnchor="10.0">
+      <children>
+      
+              <!-- ─── Enunciado arriba ────────────────────────────────────── -->
+        <Label fx:id="lblEnunciado" minHeight="-Infinity" minWidth="-Infinity" prefHeight="107.0" prefWidth="1099.0" style="            -fx-background-color: #1D2939;            -fx-background-radius: 10px;            -fx-text-fill: white;            -fx-padding: 10px;            -fx-font-size: 14px;          " text="17.- Este es un ejemplo de enunciado." wrapText="true" />
+      </children>
+   </HBox>
+
+        <!-- ─── Contenedor principal HBox ──────────────────────────── -->
+  <HBox fx:id="hBoxCentro" alignment="CENTER_LEFT" layoutX="24.0" layoutY="118.4" prefHeight="485.0" prefWidth="1099.0" spacing="20.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="125.0">
+      <HBox fx:id="hBoxCartaHerramientas" alignment="CENTER_LEFT" prefHeight="375.0" prefWidth="598.0" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox fx:id="vBoxHerramientas" alignment="TOP_CENTER" prefWidth="39.0" spacing="10.0" style="-fx-background-color: #0B1320;">
+               <children>
+                  <ToggleButton fx:id="btnZoomIn" mnemonicParsing="false" onAction="#zoomIn" prefHeight="31.0" prefWidth="25.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/zoom_in_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <Slider fx:id="zoom_slider" orientation="VERTICAL" stylesheets="@boton.css" />
+                  <ToggleButton fx:id="btnZoomOut" mnemonicParsing="false" onAction="#zoomOut" prefHeight="31.0" prefWidth="25.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/zoom_out_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ColorPicker fx:id="btnColor" style="-fx-background-color: #0B1320;" stylesheets="@boton.css" />
+                  <ToggleButton fx:id="botonPunto" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="18.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/punto.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="herramientasGroup" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnLinea" mnemonicParsing="false" onAction="#mostrarDialogoLinea" prefHeight="31.0" prefWidth="25.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css" toggleGroup="$herramientasGroup">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/line_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnArco" mnemonicParsing="false" onAction="#mostrarDialogoArco" prefHeight="31.0" prefWidth="25.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css" toggleGroup="$herramientasGroup">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/compass_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnText" mnemonicParsing="false" prefHeight="31.0" prefWidth="25.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css" toggleGroup="$herramientasGroup">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/add_text_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="botonRegla" mnemonicParsing="false" prefHeight="31.0" prefWidth="25.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/ruler_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="botonTransportador" mnemonicParsing="false" prefHeight="31.0" prefWidth="25.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/angle_mete_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="btnBorrarTodo" mnemonicParsing="false" prefHeight="31.0" prefWidth="25.0" style="-fx-background-color: #0B1320;" stylesheets="@boton.css">
+                     <graphic>
+                        <ImageView id="imgviewinteract" fitHeight="97.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/trash_can_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+               </children>
+            </VBox>
+            <ScrollPane fx:id="scrollCarta" hbarPolicy="ALWAYS" prefHeight="418.0" prefWidth="564.0" vbarPolicy="ALWAYS" HBox.hgrow="ALWAYS">
+               <content>
+                  <Pane prefHeight="356.0" prefWidth="538.0">
+                     <children>
+                        <ImageView fx:id="imageViewCarta" fitHeight="381.0" fitWidth="558.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/carta_nautica.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+
+          
+
+          <!-- Zona de respuestas: ToggleButtons + Enviar -->
+    <VBox fx:id="vBoxRespuestas" alignment="CENTER" prefHeight="471.0" prefWidth="126.0" spacing="15">
+         <ToggleButton fx:id="tbResp1" mnemonicParsing="false" prefHeight="70.0" prefWidth="1200.0" style="-fx-background-color: #1D2939; -fx-background-radius: 10px; -fx-text-fill: white; -fx-font-size: 14px;" stylesheets="@boton.css" text="A: Respuesta de ejemplo 1" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+         <ToggleButton fx:id="tbResp2" mnemonicParsing="false" prefHeight="70.0" prefWidth="1200.0" style="-fx-background-color: #1D2939; -fx-background-radius: 10px; -fx-text-fill: white; -fx-font-size: 14px;" stylesheets="@boton.css" text="B: Respuesta de ejemplo 2" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+         <ToggleButton fx:id="tbResp3" mnemonicParsing="false" prefHeight="70.0" prefWidth="1200.0" style="-fx-background-color: #1D2939; -fx-background-radius: 10px; -fx-text-fill: white; -fx-font-size: 14px;" stylesheets="@boton.css" text="C: Respuesta de ejemplo 3" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+         <ToggleButton fx:id="tbResp4" mnemonicParsing="false" prefHeight="70.0" prefWidth="1200.0" style="-fx-background-color: #1D2939; -fx-background-radius: 10px; -fx-text-fill: white; -fx-font-size: 14px;" stylesheets="@boton.css" text="D: Respuesta de ejemplo 4" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+         <VBox alignment="BOTTOM_CENTER" prefHeight="63.0" prefWidth="134.0">
+            <children>
+      
+                  <Button fx:id="btnEnviar" minHeight="-Infinity" minWidth="-Infinity" onAction="#enviarRespuesta" prefHeight="40" prefWidth="131.0" style="                 -fx-background-color: #1D2939;                 -fx-background-radius: 10px;                 -fx-text-fill: white;                 -fx-font-size: 14px;               " stylesheets="@boton.css" text="Corregir" />
+            </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <padding>
+               <Insets bottom="10.0" />
+            </padding>
+         </VBox>
+    </VBox>
+
+        </HBox>
+
+        <!-- ─── Botones inferiores: Inicio y Guardar ────────────────── -->
+  <Button fx:id="btnInicio" onAction="#inicio" prefHeight="40" prefWidth="120" style="             -fx-background-color: #1D2939;             -fx-background-radius: 10px;             -fx-text-fill: white;           " stylesheets="@boton.css" text="Inicio" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="22.0">
+      <graphic>
+         <ImageView fitHeight="16.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../resources/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+
+      </AnchorPane>

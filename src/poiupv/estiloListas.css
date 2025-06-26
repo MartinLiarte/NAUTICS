@@ -1,0 +1,57 @@
+.listview {
+  -fx-background-color: #1D2939; /* fondo azul oscuro modificado */
+  -fx-border-color: #334155;     /* borde azul oscuro */
+  -fx-border-width: 1;
+  -fx-border-radius: 8;
+  -fx-padding: 10;
+  -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -fx-font-size: 14;
+  -fx-control-inner-background: #1D2939; /* fondo interior de la lista */
+}
+
+.listview .list-cell {
+  -fx-background-color: transparent;
+  -fx-text-fill: #e0e7ff;
+  -fx-padding: 5 8 5 8;
+  -fx-background-radius: 5;
+  -fx-border-color: transparent transparent #334155 transparent; /* línea solo abajo */
+  -fx-border-width: 0 0 1 0;
+}
+
+.listview .list-cell:last-child {
+  -fx-border-width: 0;
+}
+
+.listview .list-cell:hover {
+  -fx-background-color: #334155;
+  -fx-text-fill: #f8fafc;
+  -fx-cursor: hand;
+}
+
+.listview .scroll-bar {
+  -fx-background-color: transparent;
+  -fx-padding: 0;
+}
+
+.listview .scroll-bar:vertical {
+  -fx-pref-width: 10;
+}
+
+.listview .scroll-bar .thumb {
+  -fx-background-color: #334155;
+  -fx-background-insets: 2;
+  -fx-background-radius: 5;
+}
+
+.listview .scroll-bar .thumb:hover {
+  -fx-background-color: #64748b;
+}
+
+.listview .scroll-bar .track {
+  -fx-background-color: #1D2939;
+  -fx-background-insets: 0;
+}
+
+.listview .corner {
+  -fx-background-color: #1D2939;
+}
