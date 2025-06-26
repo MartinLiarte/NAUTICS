@@ -35,4 +35,4 @@ You need Java and JavaFX set up on your system.
 
 ```bash
 # Replace the path below with the location of your JavaFX SDK
-java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -jar NauticalApp.jar
+java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -jar IPC2025.jar
