@@ -13,9 +13,9 @@ The goal of the app is to help users prepare for official nautical license exams
 
 ## 🛠️ Technologies Used
 
-- Java
-- JavaFX (with FXML if used)
-- Local data storage (e.g., JSON, CSV)
+- Java — main programming language for the application logic and backend.
+- JavaFX — framework for building the graphical user interface 
+- SQLite — lightweight relational database for storing quiz data, scores, and user progress.
 
 ## 👥 Contributors
 
