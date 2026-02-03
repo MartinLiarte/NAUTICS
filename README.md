@@ -1,6 +1,6 @@
 # 🧭 Nautical Exams Practice App
 
-This is a JavaFX desktop application developed as part of a university group project.  
+Desktop application in Java with MVC architecture, persistent storage using SQL, data access layer, and user-driven workflows. Developed as part of a university group project.  
 The goal of the app is to help users prepare for official nautical license exams by answering multiple-choice questions in a quiz format.
 
 ## 🚀 Features
